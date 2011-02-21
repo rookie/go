@@ -22,15 +22,20 @@ which is just a simple script that
 Usage
 -----
 * list directories
+
     $go
     home: ~
+
 * add directory
+
     $cd projects/awesome
     $go add
     $go
     home: ~
     awesome: ~/projects/awesome
-* remove directory    
+
+* remove directory
+
     $go
     home: ~
     awesome: ~/projects/awesome
@@ -40,7 +45,9 @@ Usage
     $go del awesome
     $go
     home: ~
+
 * add directory with custom alias
+
     $cd ~/projects/awesome
     $go add lame
     $go
