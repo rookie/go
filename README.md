@@ -22,38 +22,31 @@ which is just a simple script that
 Usage
 -----
 * list directories
-
-    $go
-    home: ~
-
+        $go
+        home: ~
 * add directory
-
-    $cd projects/awesome
-    $go add
-    $go
-    home: ~
-    awesome: ~/projects/awesome
-
+        $cd projects/awesome
+        $go add
+        $go
+        home: ~
+        awesome: ~/projects/awesome
 * remove directory
-
-    $go
-    home: ~
-    awesome: ~/projects/awesome
-    $go awesome
-    $pwd
-    ~/projects/awesome
-    $go del awesome
-    $go
-    home: ~
-
+        $go
+        home: ~
+        awesome: ~/projects/awesome
+        $go awesome
+        $pwd
+        ~/projects/awesome
+        $go del awesome
+        $go
+        home: ~
 * add directory with custom alias
+        $cd ~/projects/awesome
+        $go add lame
+        $go
+        home: ~
+        lame: ~/projects/awesome
 
-    $cd ~/projects/awesome
-    $go add lame
-    $go
-    home: ~
-    lame: ~/projects/awesome
-    
     
     
     
