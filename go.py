@@ -52,7 +52,7 @@ class GoClass:
                 f = open(self.filename, 'r')
                 self.d = json.load(f)
             else:
-                self.reset
+                self.reset()
         except IOError:
             self.reset()
     
