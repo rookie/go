@@ -61,6 +61,35 @@ Usage
         home: ~
         lame: ~/projects/awesome
 
-    
-    
-    
+Default ~/.go.json config file
+----------------------------
+
+    {
+        "info": {
+            "name": "go settings file",
+            "version": 1,
+            "website": "www.github.com/rookie/go"
+        },
+        "paths": {
+            "home": "~",
+        }
+    }
+
+Example ~/.go.json config file
+----------------------------
+
+    {
+        "info": {
+            "name": "go settings file",
+            "version": 1,
+            "website": "www.github.com/rookie/go"
+        },
+        "paths": {
+            "arduino": "~/Documents/Arduino",
+            "github": "~/Github",
+            "dropbox": "~/Dropbox",
+            "home": "~",
+            "python": "~/Projects/python",
+            "websites": "~/Sites"
+        }
+    }
