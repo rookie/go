@@ -1,18 +1,18 @@
 go
 =============
 
-directory organizer
+directory bookmark organizer
 
-This is a little script I made to save and quickly go between multiple directories
+This is a script to save and quickly cd between multiple directories
 
 Installation
 ------------
 
-dont do this if you dont know what you are doing
+dont do this if you dont know what you are doing. take a look at install.bash
 
     bash install.bash
 
-which is just a simple script that 
+which is just a simple script that
 
     mkdir -p ~/bin
     cp ./go.py ~/bin/go.py
@@ -30,6 +30,20 @@ Usage
         $go
         home: ~
         awesome: ~/projects/awesome
+* go to directory
+        $go
+        home: ~
+        awesome: ~/projects/awesome
+        $go awesome
+        $pwd
+        ~/projects/awesome
+* remove alias
+        $go
+        home: ~
+        awesome: ~/projects/awesome
+        $go del awesome
+        $go
+        home: ~
 * remove directory
         $go
         home: ~
@@ -37,7 +51,7 @@ Usage
         $go awesome
         $pwd
         ~/projects/awesome
-        $go del awesome
+        $go del
         $go
         home: ~
 * add directory with custom alias
