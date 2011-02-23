@@ -124,6 +124,8 @@ def main():
         #check first arg for an alias
         if sys.argv[1] in go.d['paths']:
             go.cdAlias(sys.argv[1])
+        else:
+            print 'go: ' + sys.argv[1] + ': No such alias'
     #go add alias, go delete alias
     if len(sys.argv) == 3:
         #check first arg for a command, commands take precedence
