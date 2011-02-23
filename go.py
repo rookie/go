@@ -25,12 +25,18 @@ import json
 
 class GoClass:
     
-    version = '0.1'
+    major = 0
+    build   = 1
     commands = {
-                    'add': 'Add current path using the directory name as alias',
-                    'del': 'Remove current path',
-                    'help': 'print this help screen'
+                    'add': '\tAdd current path using the directory name as alias',
+                    'del': '\tRemove current path',
+                    'help': '\tPrint this help screen',
+                    'version': 'Print build version'
                 }
+    
+    @staticmethod
+    def version():
+        return 'go version ' + str(GoClass.major) + '.' + str(GoClass.build)
     
     def __init__(self):
         self.default = {'info' : {'name' : 'go settings file', 'website' : 'http://www.github.com/rookie/go', 'version' : 1}, 'paths' : {'home' : '~'}}
@@ -86,7 +92,9 @@ class GoClass:
     
     def runCommand1(self, cmd):
         path = os.getcwd()
-        if(cmd == 'add'):
+        if(cmd == 'version'):
+            print self.version()
+        elif(cmd == 'add'):
             self.addPath(path)
         elif(cmd == 'del'):
             self.delPath(path)
@@ -123,7 +131,7 @@ def main():
             #print 'found command: ' + sys.argv[1]
             go.runCommand1(sys.argv[1])
         #check first arg for an alias
-        if sys.argv[1] in go.d['paths']:
+        elif sys.argv[1] in go.d['paths']:
             go.cdAlias(sys.argv[1])
         else:
             print 'go: ' + sys.argv[1] + ': No such alias'
