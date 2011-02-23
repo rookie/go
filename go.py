@@ -33,7 +33,7 @@ class GoClass:
                 }
     
     def __init__(self):
-        self.default = {'info' : {'name' : 'go settings file', 'website' : 'www.github.com/rookie/go', 'version' : 1}, 'paths' : {'home' : '~'}}
+        self.default = {'info' : {'name' : 'go settings file', 'website' : 'http://www.github.com/rookie/go', 'version' : 1}, 'paths' : {'home' : '~'}}
         self.filename = os.path.expanduser('~/.go.json')
         self.load()
     

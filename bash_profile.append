@@ -1,3 +1,5 @@
+
+#go app from http://www.github.com/rookie/go
 function go()
 {
     RESULT=$(python ~/bin/go.py $*)

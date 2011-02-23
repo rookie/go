@@ -10,7 +10,13 @@ Installation
 
 dont do this if you dont know what you are doing. take a look at install.bash
 
+mac
+
     bash install.bash
+
+ubuntu (should work on other linux but has not been tested)
+
+    bash install.ubuntu.bash
 
 which is just a simple script that
 
