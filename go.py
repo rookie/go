@@ -26,7 +26,7 @@ import json
 class GoClass:
     
     major = 0
-    build   = 1
+    build = 3
     commands = {
                     'add': '\tAdd current path using the directory name as alias',
                     'del': '\tRemove current path',
@@ -41,8 +41,8 @@ class GoClass:
     def __init__(self):
         self.default = {'info' : {'name' : 'go settings file', 'website' : 'http://www.github.com/rookie/go', 'version' : 1}, 'paths' : {'home' : '~'}}
         self.filename = os.path.expanduser('~/.go.json')
-        self.load()
         self.d = self.default
+        self.load()
     
     def reset(self):
         self.d = self.default
