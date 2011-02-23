@@ -36,6 +36,7 @@ class GoClass:
         self.default = {'info' : {'name' : 'go settings file', 'website' : 'http://www.github.com/rookie/go', 'version' : 1}, 'paths' : {'home' : '~'}}
         self.filename = os.path.expanduser('~/.go.json')
         self.load()
+        self.d = self.default
     
     def reset(self):
         self.d = self.default
