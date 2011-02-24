@@ -26,7 +26,7 @@ import json
 class GoClass:
     
     major = 0
-    build = 3
+    build = 4
     commands = {
                     'add': '\tAdd current path using the directory name as alias',
                     'del': '\tRemove current path',
@@ -66,6 +66,11 @@ class GoClass:
     def listPaths(self):
         for key in self.d['paths']:
             print key + ': ' + self.d['paths'][key]
+    
+    def completeOptions(self):
+        for key in self.d['paths']:
+            print key + ' ',
+        print ''
     
     def addPath(self, path):
         alias = os.path.split(path)[1]
@@ -127,7 +132,9 @@ def main():
     #go add, go del, go help, go home, go dropbox
     if len(sys.argv) == 2:
         #check first arg for a command, commands take precedence
-        if sys.argv[1] in GoClass.commands:
+        if sys.argv[1] == 'complete':
+            go.completeOptions()
+        elif sys.argv[1] in GoClass.commands:
             #print 'found command: ' + sys.argv[1]
             go.runCommand1(sys.argv[1])
         #check first arg for an alias

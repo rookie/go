@@ -1,5 +1,7 @@
 
-#go app from http://www.github.com/rookie/go
+#### go App ####
+# go app setup from http://www.github.com/rookie/go
+# 1. main command 'go'
 function go()
 {
     RESULT=$(python ~/bin/go.py $*)
@@ -13,6 +15,5 @@ function go()
         echo "${RESULT}"
     fi
 }
-
+# 2. make sure ~/bin is in the path
 export PATH=$PATH:~/bin
-
