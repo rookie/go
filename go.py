@@ -89,7 +89,6 @@ class GoClass:
             self.save()
     
     def delPath(self, path):
-        print path
         for key in self.d['paths']:
             if self.d['paths'][key] == path:
                 self.delAlias(key)
