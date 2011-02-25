@@ -1,19 +1,23 @@
 #!/bin/bash
 
-mkdir -p ~/bin
-if [ ! -f ~/bin/go.py ]; then
+mkdir -p ~/.go
+if [ ! -f ~/.go/go.py ]; then
     # tested on mac osx. should work.
     if [ -f ~/.bash_profile ]; then
-        echo "append ./bash_profile.append to the ~/.bash_profile file"
-        cat bash_profile.append >> ~/.bash_profile
-        echo "append ./bash_complete.append to the ~/.bash_profile file"
-        cat bash_complete.append >> ~/.bash_profile
+        echo "append go.bash to the ~/.bash_profile file"
+        #copy into .bash_profile
+        echo "# go setup from http://www.github.com/rookie/go" >> ~/.bash_profile
+        echo ". ~/.go/go.bash" >> ~/.bash_profile
+        echo "# end go setup ####" >> ~/.bash_profile
     else
-        echo "append ./bash_profile.append to the ~/.bash_profile file"
-        cat bash_profile.append >> ~/.bash_profile
-        echo "append ./bash_complete.append to the ~/.bash_profile file"
-        cat bash_complete.append >> ~/.bash_profile
+        echo "append go.bash to the ~/.bash_profile file"
+        #copy into .bash_profile
+        echo "# go setup from http://www.github.com/rookie/go" >> ~/.bash_profile
+        echo ". ~/.go/go.bash" >> ~/.bash_profile
+        echo "# end go setup ####" >> ~/.bash_profile
     fi
 fi
-echo "copy ./go.py to ~/bin/go.py"
-cp ./go.py ~/bin/go.py
+echo "copy ./go.py to ~/.go/go.py"
+cp ./go.py ~/.go/go.py
+echo "copy ./go.bash to ~/.go/go.bash"
+cp ./go.bash ~/.go/go.bash
