@@ -12,17 +12,24 @@ dont do this if you dont know what you are doing. take a look at install.bash
 
 mac
 
-    bash install.bash
+    . install.mac.bash
 
 ubuntu (should work on other linux but has not been tested)
 
-    bash install.ubuntu.bash
+    . install.ubuntu.bash
 
 which is just a simple script that
 
-    mkdir -p ~/bin
-    cp ./go.py ~/bin/go.py
-    cat bash_profile.append >> ~/.bash_profile
+* appends loading of the .go/go.bash file to your terminal startup
+* copy over the go.bash bash file for changing directories and auto complete
+* copy over the main go.py application
+
+installed files
+
+    .go.json (settings file)
+    .go/
+        go.bash (register go command, register for auto completion)
+        go.py
     
 
 Usage
