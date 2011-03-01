@@ -26,10 +26,10 @@ which is just a simple script that
 
 installed files
 
-    .go.json (settings file)
     .go/
         go.bash (register go command, register for auto completion)
         go.py
+        go-config.json (settings file)
     
 
 Usage
@@ -74,7 +74,7 @@ Usage
         home: ~
         lame: ~/projects/awesome
 
-Default ~/.go.json config file
+Default ~/.go/go-config.json config file
 ----------------------------
 
     {
@@ -88,7 +88,7 @@ Default ~/.go.json config file
         }
     }
 
-Example ~/.go.json config file
+Example ~/.go/go-config.json config file
 ----------------------------
 
     {
