@@ -26,7 +26,7 @@ import json
 class GoClass:
     
     major = 0
-    build = 5
+    build = 6
     commands = {
                     'add': '\tAdd current path using the directory name as alias',
                     'del': '\tRemove current path',

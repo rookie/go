@@ -17,7 +17,10 @@ if [ ! -f ~/.go/go.py ]; then
         echo "# end go setup ####" >> ~/.bash_profile
     fi
 fi
-echo "copy ./go.py to ~/.go/go.py"
-cp ./go.py ~/.go/go.py
-echo "copy ./go.bash to ~/.go/go.bash"
-cp ./go.bash ~/.go/go.bash
+# only copy if we arent in the $HOME/.go directory
+if [ "$PWD" != "$HOME/.go" ] ; then
+    echo "copy ./go.py to ~/.go/go.py"
+    cp ./go.py ~/.go/go.py
+    echo "copy ./go.bash to ~/.go/go.bash"
+    cp ./go.bash ~/.go/go.bash
+fi
