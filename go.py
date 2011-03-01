@@ -64,8 +64,19 @@ class GoClass:
             self.reset()
     
     def listPaths(self):
+        maxlen = 0
         for key in self.d['paths']:
-            print key + ': ' + self.d['paths'][key]
+            if len(key) > maxlen:
+                maxlen = len(key)
+        print 'Paths:'
+        keys = self.d['paths'].keys()
+        keys.sort()
+        for key in keys:
+            keyFormatted = key
+            while len(keyFormatted) < maxlen:
+                #keyFormatted += ' '
+                keyFormatted = ' ' + keyFormatted
+            print '  ' + keyFormatted + '  ' + self.d['paths'][key]
     
     def completeOptions(self):
         for key in self.d['paths']:
