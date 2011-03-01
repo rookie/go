@@ -8,25 +8,19 @@
 # todo
 # * add better help messages
 # * add pycco comments
-# * add README
-# * add bash-completion
-#     * port install bash-autocompletion
-#     * figure out how to get it all working
-#     To use bash_completion, add the following lines at the end of your .bash_profile
-#     if [ -f /opt/local/etc/bash_completion ]; then
-#         . /opt/local/etc/bash_completion
-#     fi
-# * add error detection and responses
+# * add better error detection and responses
 # * can we store a description somewhere?
 
 import os
 import sys
 import json
+import string
+import re
 
 class GoClass:
     
     major = 0
-    build = 6
+    build = 7
     commands = {
                     'add': '\tAdd current path using the directory name as alias',
                     'del': '\tRemove current path',
@@ -63,6 +57,15 @@ class GoClass:
         except IOError:
             self.reset()
     
+    def shrinkuser(self, path): #shorten, shrink
+        newpath = ''
+        homepath = os.path.expanduser('~')
+        if(string.find(path, homepath) == 0):
+            newpath = re.sub(homepath, '~', path)
+        else:
+            newpath = path
+        return newpath
+    
     def listPaths(self):
         maxlen = 0
         for key in self.d['paths']:
@@ -76,7 +79,7 @@ class GoClass:
             while len(keyFormatted) < maxlen:
                 #keyFormatted += ' '
                 keyFormatted = ' ' + keyFormatted
-            print '  ' + keyFormatted + '  ' + self.d['paths'][key]
+            print '  ' + keyFormatted + '  ' + self.shrinkuser(self.d['paths'][key])
     
     def completeOptions(self):
         for key in self.d['paths']:
