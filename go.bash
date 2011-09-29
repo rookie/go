@@ -9,7 +9,7 @@ function go()
     
     if [[ "$RESULT" == GOCD* ]]; then
         if [ -d "${RESULT:5}" ]; then
-            cd ${RESULT:5}
+            cd "${RESULT:5}"
             pwd
         fi
     else
